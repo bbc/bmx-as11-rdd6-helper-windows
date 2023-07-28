@@ -37,10 +37,14 @@ if ($actual_layout -ne $required_layout_1 -And $actual_layout -ne $required_layo
     exit
 }
 $m = .\bmx\mxf2raw --as11 "$as11_file" | Select-String -Pattern "[S2020-1] Compressed Audio Metadata" -SimpleMatch -CaseSensitive
+$message = ""
 if ($m -ne $null) {
-    Write-Host This file already contains Compressed Audio Metadata
-    pause
-    exit
+    Write-Host "${as11_file}: This file already contains Compressed Audio Metadata" -ForegroundColor DarkYellow
+    Write-Host "Press 'y' if you want to replace it, or any other key to exit"
+    if ($host.ui.RawUI.ReadKey('NoEcho,IncludeKeyDown').Character -ne "y") {
+        exit
+    }
+    $message = "(ignore the two warnings)" 
 }
 
 $f.Title = "Choose RDD 6 metadata XML file"
@@ -63,7 +67,7 @@ if ($f.ShowDialog() -eq [System.Windows.Forms.DialogResult]::Cancel) {
 }
 $output_file = $f.FileName
 
-Write-Host "Creating" $output_file
+Write-Host "Creating $output_file $message"
 .\bmx\bmxtranswrap.exe -o "$output_file" -p --rdd6 "$rdd6_file" -t as11op1a --pass-dm "$as11_file"
 if ($? -eq "True") {
     Write-Host Success
