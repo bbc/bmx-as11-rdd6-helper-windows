@@ -1,6 +1,6 @@
 # bmx-as11-rdd6-helper-windows
 
-Windows script to embed RDD 6 (Dolby) surround sound metadata in an [AS-11 UK DPP HD file](https://amwa-tv.github.io/AS-11_UK_DPP_HD/AMWA_AS_11_UK_DPP_HD.html), using components of the [bmx suite](https://github.com/bbc/bmx).
+Windows script to embed RDD 6 (Dolby) surround sound metadata in an [AS-11 UK DPP HD file](https://amwa-tv.github.io/AS-11_UK_DPP_HD/AMWA_AS_11_UK_DPP_HD.html). This is an adjunct to the [bmx suite](https://github.com/bbc/bmx), currently using components from [Version 1.2](https://github.com/bbc/bmx/releases/tag/v1.2).
 
 Requires [Microsoft Visual C++ Redistributable](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist) to run the included bmx executables. This is often already present as it is commonly used by other Windows applications.
 
