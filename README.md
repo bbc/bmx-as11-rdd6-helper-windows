@@ -12,7 +12,7 @@ This repository also includes a copy of the RDD 6 XML Creator web browser applic
 
 1. Create an AS-11 file, complete apart from the surround sound metadata
 2. Create a surround sound metadata XML file, which can be done with the XML Creator as per its [README](rdd6_xml_creator/README.md)
-3. Open the [embed_rdd6.bat](embed_rdd6.bat) script from a File Explorer
+3. Open the [embed_rdd6.bat](embed_rdd6.bat) script from a File Explorer and follow the displayed instructions:
 4. Choose the AS-11 file
 5. Answer 'y' if it already contains surround sound metadata
 6. Choose the XML file
